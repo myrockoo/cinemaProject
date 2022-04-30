@@ -34,5 +34,5 @@
 	<mybatis-spring:scan
 		base-package="com.cinema.mapper" />
 	<context:component-scan
-		base-package="com.cinema.sample"></context:component-scan>
+		base-package="com.cinema.service"></context:component-scan>
 </beans>
