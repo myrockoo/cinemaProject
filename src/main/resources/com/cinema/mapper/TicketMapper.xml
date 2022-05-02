@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.cinema.mapper.TicketMapper">
+ 
+ <select id = "get" resultType="com.cinema.domain.TicketVO">
+ 
+ select * from ticket where ticketNO=#{ticketNO}
+ 
+ </select>
+ 
+ <select id = "getAllTicket" resultType="com.cinema.domain.TicketVO">
+ 
+ select * from ticket where memberNO=#{memberNO}
+ 
+ </select>
+ 
+ <insert id = "ticket">
+ 
+  insert into ticket (ticketNO,memberNO,movieNO,cinemaNO,theaterNO,seatNO)
+  values (seq_ticket.nextval,#{memberNO},#{movieNO},#{cinemaNO},#{theaterNO},#{seatNO})
+ 
+ </insert>
+ 
+ <delete id = "cancel">
+ 	
+ 	delete from ticket where ticketNO=#{ticketNO}
+ 
+ </delete>
+
+ </mapper>
